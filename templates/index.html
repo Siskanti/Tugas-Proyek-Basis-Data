@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+    {{ bootstrap.load_css() }}
+</head>
+
+<body class="body">
+
+    <div class="col-12">
+        <nav class="head navbar navbar-dark shadow">
+            <h1><a class="navbar-brand ms-5 fs-1 fw-bold">SEPUTAR BERITA</a></h1>
+            <div class="nav justify-content-end">
+                {% block btnLog %} {% endblock %}
+            </div>
+        </nav>
+    </div>
+
+    {% block menu %} {% endblock %}
+
+    <div>
+        <div class="container">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-md-9 mt-3">
+                    {% block content %}{% endblock %}
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mt-3 border-0">
+                        <div class="card-body text-white" style="background: #CDBEA7;">
+                            <h4 class="card-title text-center" style="color:#882426;"><strong>Kategori Berita</strong></h4>
+                            <ol class="list-group list-group-numbered shadow">
+                                {% for a in kategori %}
+                                <li class="list-group-item" style=" color:#882426; background:#C29545">
+                                    {{ a.kategori}}
+                                </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="card mt-3 border-0">
+                        <div class="card-body text-white" style="background: #CDBEA7;">
+                            <h4 class="card-title text-center" style="color:#882426;"><strong>Tag Tertinggi</strong></h4>
+                            <ol class="list-group list-group-numbered shadow">
+                                {% for a in tags %}
+                                <li class="list-group-item" style=" color:#882426; background:#C29545">
+                                    {{ a.tags}}
+                                </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-start mt-5">
+        <div class="text-center py-2" style="background: #C29545;">
+            <small class="copyright">Copyright &copy; 2021 - Group 10. All Rights Reserve</small>
+        </div>
+    </footer>
+
+    {{ bootstrap.load_js() }}
+
+</body>
+
+</html>

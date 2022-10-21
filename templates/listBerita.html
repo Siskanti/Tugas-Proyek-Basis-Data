@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+
+
+{% block title %}Seputar Berita - Daftar List{% endblock %}
+
+
+{% block btnLog %}
+{% if who == "home" %}
+<span>
+    <a href="{{ url_for('login') }}" class="badge rounded-pill btn mx-3 p-3 fw-bold fs-6" style="background: #CDBEA7;">
+        Login
+    </a>
+</span>
+{% else %}
+<span>
+    <a href="{{ url_for('logout') }}" class="badge rounded-pill btn mx-3 p-3 fw-bold fs-6" style="background: #CDBEA7;">
+        Logout
+    </a>
+</span>
+{% endif %}
+{% endblock %}
+
+
+{% block menu %}
+<div class="row text-center bg-gradient mx-0" style="background: #CDBEA7">
+    <div class="col-5">
+    </div>
+    <div class="inactive col-2">
+        <p><a href="{{url_for(who)}}" class="mt-3">Beranda</a></p>
+    </div>
+    <div class="active col-2">
+        <p><a href="{{url_for('listberita', who=who)}}" class="mt-3">List Berita</a></p>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="card border-0">
+    <div class="card-header" style="background:#882426">
+        <h4 class="fw-bold my-1 px-4 text-white">Berdasarkan Waktu</h4>
+    </div>
+    <div class="list card-body row m-5 rounded-3" style="background:#CDBEA7; color:#882426">
+        <div class="col col-5 m-1 fw-bold">
+            <a href="{{url_for('orderBy', orderBy='Terbaru', who=who)}}">Berita Terbaru</a>
+        </div>
+        <div class="col col-5 m-1 fw-bold">
+            <a href="{{url_for('orderBy', orderBy='Terlama', who=who)}}">Berita Terlama</a>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0">
+    <div class="card-header" style="background:#882426">
+        <h4 class="fw-bold my-1 px-4 text-white">Berdasarkan Kategori</h4>
+    </div>
+    <div class="list card-body row m-5 rounded-3" style="background:#CDBEA7; color:#882426">
+        {% for a in kategori %}
+        <div class="col col-5 m-1 fw-bold">
+            <a href="{{url_for('orderBy', orderBy = a.kategori, who=who)}}">{{a.kategori}}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card border-0">
+    <div class="card-header" style="background:#882426">
+        <h4 class="fw-bold my-1 px-4 text-white">Berdasarkan Tags Tertinggi</h4>
+    </div>
+    <div class="list card-body row m-5 rounded-3" style="background:#CDBEA7; color:#882426">
+        {% for a in tags %}
+        <div class="col col-5 m-1 fw-bold">
+            <a href="{{url_for('orderBy', orderBy = a.tags, who=who)}}">{{a.tags}}</a>
+            <span class="badge rounded-pill mt-3" style="background:#882426;">{{a.count}}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

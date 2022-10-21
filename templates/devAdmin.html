@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+
+
+{% block title %}Web Development{% endblock %}
+
+
+{% block btnLog %}
+<span>
+    <a href="{{ url_for('logout') }}" class="badge rounded-pill btn mx-3 p-3 fw-bold fs-6" style="background: #CDBEA7;">
+        Logout
+    </a>
+</span>
+{% endblock %}
+
+
+{% block menu %}
+<div class="row text-center bg-gradient mx-0" style="background: #CDBEA7">
+    <div class="col-5">
+    </div>
+    <div class="active col-2">
+        <p><a href="{{url_for('admin')}}" class="mt-3">Beranda</a></p>
+    </div>
+    <div class="inactive col-2">
+        <p><a href="{{url_for('listberita', who='admin')}}" class="mt-3">List Berita</a></p>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="card border-0 p-4" style="background:#efefef">
+    <h1 class="fw-bold ms-3">Daftar Berita</h1>
+    <hr>
+    <ol class="p-3 m-2 shadow">
+        {% for a in data %}
+        <li class="list-group-item border-0 mb-0 fs-4 fw-bold" style="background:#CDBEA7">{{ a.judul }}</li>
+        <div class="list-group-item border-0 fst-italic mb-3">
+            <p class="mb-0 ps-3">By: {{ a.penulis }}</p>
+            <p class="mb-0 ps-3">{{ a.tanggal }}</p>
+            <div class="me-5 my-3">
+                <span><a href="{{ url_for('detail2', id=a.id) }}" class="btn btn-sm btn-info">Detail</a></span>
+                <span><a href="{{ url_for('formedit', id=a.id) }}" class="btn btn-sm btn-warning">Edit</a></span>
+                <span><a href="{{ url_for('hapusberita', id=a.id) }}" class="btn btn-sm btn-danger">Hapus</a></span>
+            </div>
+        </div>
+        {% endfor %}
+    </ol>
+
+    <span><a href="{{ url_for('formdata') }}" class="btn btn-sm text-white mt-3" style="background:#882426">Add
+            Berita</a></span>
+
+</div>
+
+<table width="100%" class="table">
+    <tr>
+        <td class="col-9 pt-3">
+            <a style="color:#efefef;">{{ pagination.info }}</a>
+        </td>
+        <td class="text-right">
+            {{ pagination.links }}
+        </td>
+    </tr>
+</table>
+{% endblock %}

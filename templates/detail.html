@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+
+{% block title %}Seputar Berita - {{data.judul}}{% endblock %}
+
+
+{% block btnLog %}
+<span>
+    <a href="{{ url_for('login') }}" class="badge rounded-pill btn mx-3 p-3 fw-bold fs-6" style="background: #CDBEA7;">
+        Login
+    </a>
+</span>
+{% endblock %}
+
+
+{% block content %}
+<div class="card border-0 mb-5" style="background:#efefef">
+    <div class="card-body">
+
+        <div style="margin-bottom: -10px; background:#882426;">
+            <div class="row">
+                <div class="col-8 col-sm-9 col-md-9 col-lg-9 col-xl-10" style="padding-top: 15px;padding-left: 10px;">
+                    <p class="ps-3 mb-0 text-white"><strong>Penulis:&nbsp;</strong><a>{{data.penulis}}</a></p>
+                    <p class="text-secondary ps-3 text-white" style="font-size: 12px"><strong>{{data.tanggal}}</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div style="padding-left: 20px;padding-bottom: 20px;padding-right: 20px;padding-top: 5px;margin: 10px;">
+            <h2><strong>{{data.judul}}</strong></h2>
+            <p>{{data.isi}}</p>
+        </div>
+        <a class="btn mt-2 text-white" href="{{ url_for('home') }}" style="background:#882426;">
+            <strong>Previous Page</strong>
+        </a>
+
+    </div>
+</div>
+{% endblock %}

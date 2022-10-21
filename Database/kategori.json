@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "6262585379455cc090831e02"
+  },
+  "kategori": "Kesehatan"
+},{
+  "_id": {
+    "$oid": "626258a979455cc090831e06"
+  },
+  "kategori": "Teknologi"
+},{
+  "_id": {
+    "$oid": "626258da79455cc090831e09"
+  },
+  "kategori": "Internasional"
+}]

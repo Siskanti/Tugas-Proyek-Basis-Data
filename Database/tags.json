@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6262585279455cc090831dff"
+  },
+  "tags": "Covid-19",
+  "count": 2
+},{
+  "_id": {
+    "$oid": "626258a979455cc090831e04"
+  },
+  "tags": "Rayzen",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "626258a979455cc090831e05"
+  },
+  "tags": "Prosesor",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "626258da79455cc090831e08"
+  },
+  "tags": "Pandemi",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "626258e879455cc090831e0a"
+  },
+  "tags": "Vaksinasi",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "626258e879455cc090831e0b"
+  },
+  "tags": "Booster",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "6262593d79455cc090831e0d"
+  },
+  "tags": "Anemia",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "6262593d79455cc090831e0e"
+  },
+  "tags": "Penyakit",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "6262595e79455cc090831e10"
+  },
+  "tags": "Rusia",
+  "count": 2
+},{
+  "_id": {
+    "$oid": "6262595e79455cc090831e11"
+  },
+  "tags": "Jepang",
+  "count": 1
+},{
+  "_id": {
+    "$oid": "6262595e79455cc090831e12"
+  },
+  "tags": "Perang",
+  "count": 2
+}]

@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6257a594bf8c23715e28a99c"
+  },
+  "nama": "admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$12$JpwsjzVyeBTPF4glWaibgOwBaKEwf/lyDJeb/ZB5a0pE9bK.3AsKK"
+},{
+  "_id": {
+    "$oid": "6257a69fe166468d9417ef56"
+  },
+  "nama": "admin1",
+  "email": "admin1@gmail.com",
+  "password": "$2b$12$v2wrdgCy73DSUEz/5l6KJu7cjctvXPL1MiAyXrrJpim8BnWO4XBDq"
+}]
